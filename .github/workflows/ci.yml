@@ -19,5 +19,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Ejecutar Pruebas Unitarias (JUnit)
-      run: mvn clean test -f Backend/pom.xml
+    - name: Dar permisos y ejecutar Pruebas Unitarias
+      run: |
+        chmod +x Backend/mvnw
+        ./Backend/mvnw clean test -f Backend/pom.xml
